@@ -2,6 +2,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            activeName: 0,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -163,11 +165,15 @@ createApp({
                             status: 'received'
                         }
                     ],
-
-                    fixMessage: 'Ultimo messaggio inviato',
                 }
             ]
-
+            
         }
-    }
+    },
+    methods: {
+        openChat(newIndex) {
+            this.activeName = newIndex;
+            console.log(this.openChat);
+        }
+ }
 }).mount('#app')
